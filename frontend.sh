@@ -4,7 +4,7 @@ function a(){
     echo ${URL}
     if curl -s ${URL} | grep "Welcome"; then
         #Change this to 0 after the job fails
-        return 1
+        return 0
     else
         return 1
     fi

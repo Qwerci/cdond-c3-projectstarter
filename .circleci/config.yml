@@ -362,6 +362,21 @@ jobs:
                   --output text)
             echo $BACKEND_IP
       - run:
+          name: Frontend smoke test.
+          command: |
+            # sudo chmod 777 ./frontend.sh
+            # ./frontend.sh
+            URL="http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-us-east-1.amazonaws.com/#/employees"
+            echo ${URL} 
+            sudo chmod +x ./frontend.sh
+            ./frontend.sh
+            # if curl -s ${URL} | grep "Welcome"; then
+            #     #Change this to 0 after the job fails
+            #     return 1
+            # else
+            #     return 1
+            # fi
+      - run:
           name: Backend smoke test.
           command: |
             # sudo chmod 777 ./backend.sh
@@ -377,21 +392,6 @@ jobs:
             ./backend.sh
             # if curl "${API_URL}/api/status" | grep "ok"; then
             #     return 0
-            # else
-            #     return 1
-            # fi
-      - run:
-          name: Frontend smoke test.
-          command: |
-            # sudo chmod 777 ./frontend.sh
-            # ./frontend.sh
-            URL="http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-us-east-1.amazonaws.com/#/employees"
-            echo ${URL} 
-            sudo chmod +x ./frontend.sh
-            ./frontend.sh
-            # if curl -s ${URL} | grep "Welcome"; then
-            #     #Change this to 0 after the job fails
-            #     return 1
             # else
             #     return 1
             # fi
