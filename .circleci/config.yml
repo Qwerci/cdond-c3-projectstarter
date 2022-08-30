@@ -179,7 +179,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: [d9:36:a8:61:87:a1:f5:3f:e8:5c:c8:a4:e3:ac:b1:7c]
+          fingerprints: [96:d9:53:41:26:27:0b:76:43:a9:a0:33:36:15:b7:ff]
       - run:
           name: Install dependencies
           command: |
@@ -307,7 +307,7 @@ jobs:
       - attach_workspace:
           at: .
       - add_ssh_keys:
-          fingerprints: [d9:36:a8:61:87:a1:f5:3f:e8:5c:c8:a4:e3:ac:b1:7c]
+          fingerprints: [96:d9:53:41:26:27:0b:76:43:a9:a0:33:36:15:b7:ff]
       - run:
           name: Install awscli npm node ansible
           command: |
